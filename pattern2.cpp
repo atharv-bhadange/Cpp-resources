@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     int n;
     cin >> n;
-    /*for(int i=1; i<=n; i++)
+    for(int i=1; i<=n; i++)
     {
         for(int j=1; j<=i; j++)
         {
@@ -22,9 +22,9 @@ int main(){
             }
         }
         cout << endl;
-    }  */
+    }  
 
-    /*   //rohombus
+      //rohombus
     for(int i=1; i<=n; i++)
     {
         for(int j=1; j<=n-i; j++)
@@ -37,7 +37,7 @@ int main(){
         }
         cout << '\n';
     }
-    */
+    
 
     for(int i=1; i<=n; i++)
     {
