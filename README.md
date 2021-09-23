@@ -1,2 +1,2 @@
 # Cpp-resources
- Adding C++ resources for future refrence
+ Adding C++ resources for future reference
