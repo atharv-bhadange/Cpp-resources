@@ -54,10 +54,10 @@ void two_unique_eles(int n){
 int main(){
     int n; cin>>n;
     //Q. Write a program to check if a number is power of 2
-    //cout << ispowerof2(n) << endl;
+    cout << ispowerof2(n) << endl;
 
     //Q. Write a program to count number of 1s in binary reprsentation of a number 
-    //cout << onesinnumber(n) << endl;
+    cout << onesinnumber(n) << endl;
 
     //Q. Write a program to find a unique number in an array where all numbers except one, are present twice.
     unique_ele(n);
