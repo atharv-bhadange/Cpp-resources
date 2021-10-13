@@ -184,7 +184,7 @@ void ToH(int n, int a, int b, int c)
     //O(2^n)
 }
 
-//back-tracking 
+//back-tracking
 //algo to find out all permutation of string if repetition of words is NOT allowed
 void perm(char s[], int n)
 {
@@ -207,6 +207,24 @@ void perm(char s[], int n)
                 perm(s, n + 1);
                 flag[i] = 0;
             }
+        }
+    }
+}
+
+void perm2(string s, int l, int h) //initially l=0,h=size-1;
+{
+    int i;
+    if (l == h)
+    {
+        cout << s << endl;
+    }
+    else
+    {
+        for (i = l; i <= h; i++)
+        {
+            swap(s[l], s[i]);
+            perm2(s, l + 1, h);
+            swap(s[l], s[i]);
         }
     }
 }
