@@ -38,7 +38,7 @@ public:
             for (j = 1; j <= n; j++)
             {
                 if (i == j)
-                    cout << a[i] << " ";
+                    cout << a[i-1] << " ";
                 else
                     cout << 0 << " ";
             }
@@ -335,47 +335,61 @@ public:
 
 int main()
 {
+while(true)
+{
     int d;
     cout << "Enter Dimension ";
     cin >> d;
-    /*
-    Diagonal dm(d);
-    int x;
-    cout << "Enter All Elements of diagonal matrix\n";
-    for (int i = 1; i <= d; i++)
-    {
-        for (int j = 1; j <= d; j++)
-        {
-            cin >> x;
-            dm.set(i, j, x);
-        }
-    }
-    cout<<'\n';
-    dm.display();
-    */
+    cout << "Which matrix do you want to be displayed?\n";
+    cout << "1. Diagonal Matrix\n";
+    cout << "2. Lower Tiangular Matrix\n";
+    cout << "3. Symmetric Matrix\n";
+    cout << "4. Tridiagonal Matrix\n";
+    cout << "5. Toeplitz Matrix\n";
+    cout << "6. Exit\n>>>>";
+    int ch;
+    cin >> ch;
 
-    /*
-    LowerTriangle lt(d);
-    int x;
-    bool choice;
-    cout << "Press 1 for row major mapping 0 for column major mapping>>>";
-    cin >> choice;
-
-    cout << "Enter All Elements of Lower Triangular matrix\n";
-    for (int i = 1; i <= d; i++)
+    if (ch == 1)
     {
-        for (int j = 1; j <= d; j++)
+        Diagonal dm(d);
+        int x;
+        cout << "Enter all elements of matrix\n";
+        for (int i = 1; i <= d; i++)
         {
-            cin >> x;
-            if (choice)
-                lt.rm_set(i, j, x);
-            else
-                lt.cm_set(i, j, x);
+            for (int j = 1; j <= d; j++)
+            {
+                cin >> x;
+                dm.set(i, j, x);
+            }
         }
+        cout << '\n';
+        dm.display();
     }
-    cout << '\n';
-    lt.display(choice);
-    */
+
+    else if (ch == 2)
+    {
+        LowerTriangle lt(d);
+        int x;
+        bool choice;
+        cout << "Press 1 for row major mapping 0 for column major mapping>>>";
+        cin >> choice;
+
+        cout << "Enter all elements of matrix\n";
+        for (int i = 1; i <= d; i++)
+        {
+            for (int j = 1; j <= d; j++)
+            {
+                cin >> x;
+                if (choice)
+                    lt.rm_set(i, j, x);
+                else
+                    lt.cm_set(i, j, x);
+            }
+        }
+        cout << '\n';
+        lt.display(choice);
+    }
 
     /*
                         // ***IMPORTANT NOTE***
@@ -384,51 +398,60 @@ int main()
     2. row major and column major formulae are swapped
     */
 
-    /*
-    Symmetric sym(d);
-    int x;
-    cout << "Enter All Elements of diagonal matrix\n";
-    for (int i = 1; i <= d; i++)
+    else if (ch == 3)
     {
-        for (int j = 1; j <= d; j++)
+        Symmetric sym(d);
+        int x;
+        cout << "Enter all elements of matrix\n";
+        for (int i = 1; i <= d; i++)
         {
-            cin >> x;
-            sym.sym_rm_set(i, j, x);
+            for (int j = 1; j <= d; j++)
+            {
+                cin >> x;
+                sym.sym_rm_set(i, j, x);
+            }
         }
+        cout << '\n';
+        sym.display();
     }
-    cout<<'\n';
-    sym.display();
-    */
 
-    /*
-    TriDiagonal tri(d);
-    int x;
-    cout << "Enter All Elements of diagonal matrix\n";
-    for (int i = 1; i <= d; i++)
+    else if (ch == 4)
     {
-        for (int j = 1; j <= d; j++)
+        TriDiagonal tri(d);
+        int x;
+        cout << "Enter all elements of matrix\n";
+        for (int i = 1; i <= d; i++)
         {
-            cin >> x;
-            tri.tri_set(i, j, x);
+            for (int j = 1; j <= d; j++)
+            {
+                cin >> x;
+                tri.tri_set(i, j, x);
+            }
         }
+        cout << '\n';
+        tri.display();
     }
-    cout << '\n';
-    tri.display();
-    */
 
-    Toeplitz toe(d);
-    int x;
-    cout << "Enter All Elements of diagonal matrix\n";
-    for (int i = 1; i <= d; i++)
+    else if (ch == 5)
     {
-        for (int j = 1; j <= d; j++)
+        Toeplitz toe(d);
+        int x;
+        cout << "Enter all elements of matrix\n";
+        for (int i = 1; i <= d; i++)
         {
-            cin >> x;
-            toe.toe_set(i, j, x);
+            for (int j = 1; j <= d; j++)
+            {
+                cin >> x;
+                toe.toe_set(i, j, x);
+            }
         }
+        cout << '\n';
+        toe.display();
     }
-    cout << '\n';
-    toe.display();
+
+    else
+        break;
+}
 
     return 0;
 }
